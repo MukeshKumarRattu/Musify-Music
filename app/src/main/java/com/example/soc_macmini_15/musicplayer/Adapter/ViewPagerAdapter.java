@@ -6,6 +6,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.soc_macmini_15.musicplayer.Fragments.AllSongFragment;
+import com.example.soc_macmini_15.musicplayer.Fragments.CurrentSongFragment;
+import com.example.soc_macmini_15.musicplayer.Fragments.FavSongFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
@@ -21,11 +24,11 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return null;
+                return AllSongFragment.getInstance(position, contentResolver);
             case 1:
-                return null;
+                return CurrentSongFragment.getInstance(position);
             case 2:
-                return null;
+                return FavSongFragment.getInstance(position);
             default:
                 return null;
         }
